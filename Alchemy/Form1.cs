@@ -16,5 +16,20 @@ namespace Alchemy
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        private void button1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            button1.DoDragDrop(button1.Text, DragDropEffects.Copy |
+               DragDropEffects.Move);
+        }
     }
 }
