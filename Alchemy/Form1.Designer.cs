@@ -1,4 +1,7 @@
-﻿namespace Alchemy
+﻿using System;
+using System.IO;
+
+namespace Alchemy
 {
     partial class Form1
     {
@@ -99,7 +102,6 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -108,6 +110,9 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.PictureBox pictureBox1;
+
+        //Таблица элементов
+        private int[,] elementChart;
     }
 }
 

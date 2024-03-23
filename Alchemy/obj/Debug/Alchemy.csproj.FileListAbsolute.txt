@@ -8,3 +8,14 @@ D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.csproj.Gene
 D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.csproj.CoreCompileInputs.cache
 D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.exe
 D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.pdb
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\bin\Debug\Elements.txt
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\bin\Debug\Alchemy.exe.config
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\bin\Debug\Alchemy.exe
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\bin\Debug\Alchemy.pdb
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.AssemblyReference.cache
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.Form1.resources
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.Properties.Resources.resources
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.GenerateResource.cache
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.CoreCompileInputs.cache
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.exe
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.pdb

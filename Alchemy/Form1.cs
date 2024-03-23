@@ -27,10 +27,18 @@ namespace Alchemy
         int totalElements = 0;
         int lineAnimation = 0;
         int activeNumber = 0;
-        int[,] elementChart = { { 1, 2, 0 }, {2,  -1, -1 }, {0, -1, 1 } };
 
         public Form1()
         {
+
+            string[] lines = File.ReadAllLines("Elements.txt");
+            this.elementChart = new int[lines.Length, lines[0].Split(' ').Length];
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] temp = lines[i].Split(' ');
+                for (int j = 0; j < temp.Length; j++)
+                    elementChart[i, j] = Convert.ToInt32(temp[j]);
+            }
             InitializeComponent();
             SetUpApp();
             vScrollBar1.Minimum = 0;
