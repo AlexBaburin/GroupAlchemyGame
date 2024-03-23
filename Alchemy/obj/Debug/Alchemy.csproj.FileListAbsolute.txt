@@ -1,0 +1,10 @@
+D:\Домашка\Практика\Alchemy\Alchemy\bin\Debug\Alchemy.exe.config
+D:\Домашка\Практика\Alchemy\Alchemy\bin\Debug\Alchemy.exe
+D:\Домашка\Практика\Alchemy\Alchemy\bin\Debug\Alchemy.pdb
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.csproj.AssemblyReference.cache
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.Form1.resources
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.Properties.Resources.resources
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.csproj.GenerateResource.cache
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.csproj.CoreCompileInputs.cache
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.exe
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.pdb
