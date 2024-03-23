@@ -28,21 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(747, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(326, 685);
-            this.panel1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(596, 635);
+            this.button1.Location = new System.Drawing.Point(562, 635);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 55);
             this.button1.TabIndex = 1;
@@ -52,33 +49,65 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(452, 635);
+            this.button2.Location = new System.Drawing.Point(418, 635);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 55);
             this.button2.TabIndex = 2;
             this.button2.Text = "Начать заново";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 20;
+            this.timer1.Tick += new System.EventHandler(this.FormTimerEvent);
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(943, 13);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(26, 677);
+            this.vScrollBar1.TabIndex = 3;
+            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Alchemy.Properties.Resources.line;
+            this.pictureBox1.Location = new System.Drawing.Point(730, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1, 715);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 702);
+            this.ClientSize = new System.Drawing.Size(978, 694);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormPaintEvent);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMouseUp);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        int number_of_elements = 25;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
