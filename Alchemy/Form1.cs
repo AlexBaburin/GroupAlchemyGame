@@ -188,7 +188,7 @@ namespace Alchemy
                 Pen outline;
                 if (element.active)
                 {
-                    outline = new Pen(Color.Maroon, lineAnimation);
+                    outline = new Pen(Color.Blue, lineAnimation);
                 }
                 else
                 {
@@ -202,7 +202,7 @@ namespace Alchemy
                 Pen outline;
                 if (element.active)
                 {
-                    outline = new Pen(Color.Maroon, lineAnimation);
+                    outline = new Pen(Color.Blue, lineAnimation);
                 }
                 else
                 {

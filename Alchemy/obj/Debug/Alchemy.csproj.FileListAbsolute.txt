@@ -19,3 +19,4 @@ C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.Ge
 C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.CoreCompileInputs.cache
 C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.exe
 C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.pdb
+D:\Домашка\Практика\Alchemy\Alchemy\bin\Debug\Elements.txt
