@@ -9,6 +9,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
@@ -19,7 +20,7 @@ namespace Alchemy
         List<Element> elements = new List<Element>();
         List<Element> activeElements = new List<Element>();
         Element SelectedElement;
-        Element CreatedElement;
+        Element CreatedElement, CreatedElement_2;
         int indexValue;
         int yPos = 5;
         int scrollDistance = 0;
@@ -28,10 +29,12 @@ namespace Alchemy
         int totalElements = 0;
         int lineAnimation = 0;
         int activeNumber = 0;
+        int lineAnimation_2 = 0;
+        SoundPlayer rightSound = new SoundPlayer(@"sounds\right.wav");
+        SoundPlayer wrongSound = new SoundPlayer(@"sounds\wrong.wav");
 
         public Form1()
         {
-
             string[] lines = File.ReadAllLines("Elements.txt");
             this.elementChart = new int[lines.Length, lines[0].Split(' ').Length];
             for (int i = 0; i < lines.Length; i++)
@@ -149,29 +152,35 @@ namespace Alchemy
                 {
                     foreach(Element secondElement in activeElements)
                     {
-                        if (secondElement != tempElement && secondElement.rect.IntersectsWith(tempElement.rect) &&
-                            elementChart[secondElement.index, tempElement.index] != -1)
-                        {
-                            activeNumber--;
+                        if (secondElement != tempElement && secondElement.rect.IntersectsWith(tempElement.rect))
+                            if (elementChart[secondElement.index, tempElement.index] != -1)
+                            {
+                                activeNumber--;
 
-                            indexValue = elementChart[secondElement.index, tempElement.index];
-                            if (elements[indexValue].discovered == false)
-                                elements[indexValue].elementPic = Image.FromFile(imageLocation[indexValue]);
-                            elements[indexValue].discovered = true;
+                                indexValue = elementChart[secondElement.index, tempElement.index];
+                                if (elements[indexValue].discovered == false)
+                                    elements[indexValue].elementPic = Image.FromFile(imageLocation[indexValue]);
+                                elements[indexValue].discovered = true;
 
-                            MakeActiveElement(indexValue);
-                            CreatedElement = elements[indexValue];
-                            activeElements[activeElements.Count - 1].rect.X = tempElement.rect.X;
-                            activeElements[activeElements.Count - 1].rect.Y = tempElement.rect.Y;
-                            activeElements[activeElements.Count - 1].position.X = tempElement.position.X;
-                            activeElements[activeElements.Count - 1].position.Y = tempElement.position.Y;
+                                MakeActiveElement(indexValue);
+                                CreatedElement = elements[indexValue];
+                                CreatedElement_2 = activeElements[activeElements.Count - 1];
+                                activeElements[activeElements.Count - 1].rect.X = tempElement.rect.X;
+                                activeElements[activeElements.Count - 1].rect.Y = tempElement.rect.Y;
+                                activeElements[activeElements.Count - 1].position.X = tempElement.position.X;
+                                activeElements[activeElements.Count - 1].position.Y = tempElement.position.Y;
 
-                            DeleteActiveElement(activeElements.IndexOf(tempElement));
-                            DeleteActiveElement(activeElements.IndexOf(secondElement));
+                                DeleteActiveElement(activeElements.IndexOf(tempElement));
+                                DeleteActiveElement(activeElements.IndexOf(secondElement));
+                                rightSound.Play();
 
-                            flag = true;
-                            break;
-                        }
+                                flag = true;
+                                break;
+                            }
+                            else 
+                            {
+                                wrongSound.Play(); 
+                            }
                     }
                     if (flag)
                         break;
@@ -194,7 +203,10 @@ namespace Alchemy
                 }
                 else if (element == CreatedElement)
                 {
-                    outline = new Pen(Color.Green, lineAnimation);
+                    if (lineAnimation_2 < 5)
+                        outline = new Pen(Color.Green, lineAnimation_2);
+                    else
+                        outline = new Pen(Color.Green, 10 - lineAnimation_2);
                 }
                 else
                 {
@@ -209,6 +221,13 @@ namespace Alchemy
                 if (element.active)
                 {
                     outline = new Pen(Color.Blue, lineAnimation);
+                }
+                else if (element == CreatedElement_2)
+                {
+                    if (lineAnimation_2 < 5)
+                        outline = new Pen(Color.Green, lineAnimation_2);
+                    else 
+                        outline = new Pen(Color.Green, 10 - lineAnimation_2);
                 }
                 else
                 {
@@ -238,6 +257,19 @@ namespace Alchemy
                 if (lineAnimation < 5)
                 {
                     lineAnimation++;
+                }
+            }
+            if (CreatedElement != null)
+            {
+                if (lineAnimation_2 < 10)
+                {
+                    lineAnimation_2++;
+                }
+                else
+                {
+                    lineAnimation_2 = 0;
+                CreatedElement = null;
+                CreatedElement_2 = null;
                 }
             }
             this.Invalidate();
