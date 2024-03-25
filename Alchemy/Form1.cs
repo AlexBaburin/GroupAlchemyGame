@@ -42,7 +42,7 @@ namespace Alchemy
             InitializeComponent();
             SetUpApp();
             vScrollBar1.Minimum = 0;
-            vScrollBar1.Maximum = 20;
+            vScrollBar1.Maximum = 100;
         }
 
         private void SetUpApp()
@@ -98,15 +98,15 @@ namespace Alchemy
             {
                 if (SelectedElement == null)
                 {
-                    if (newElement.rect.Contains(mousePosition) && newElement.discovered && activeNumber < 2)
+                    if (newElement.rect.Contains(mousePosition) && newElement.discovered && activeNumber < 100)
                     {
                         MakeActiveElement(elements.IndexOf(newElement));
                         SelectedElement = activeElements[activeElements.Count - 1];
                         activeElements[activeElements.Count - 1].active = true;
                         if (newElement.position.X < 1000 && newElement.position.X > 400)
                             activeNumber++;
-                        if (activeNumber > 2)
-                            activeNumber = 2;
+                        if (activeNumber > 100)
+                            activeNumber = 100;
                     }
                 }
             }
@@ -151,7 +151,7 @@ namespace Alchemy
                         if (secondElement != tempElement && secondElement.rect.IntersectsWith(tempElement.rect) &&
                             elementChart[secondElement.index, tempElement.index] != -1)
                         {
-                            activeNumber = 1;
+                            activeNumber--;
 
                             indexValue = elementChart[secondElement.index, tempElement.index];
                             if (elements[indexValue].discovered == false)
@@ -159,13 +159,13 @@ namespace Alchemy
                             elements[indexValue].discovered = true;
 
                             MakeActiveElement(indexValue);
-                            activeElements[2].rect.X = tempElement.rect.X;
-                            activeElements[2].rect.Y = tempElement.rect.Y;
-                            activeElements[2].position.X = tempElement.position.X;
-                            activeElements[2].position.Y = tempElement.position.Y;
+                            activeElements[activeElements.Count - 1].rect.X = tempElement.rect.X;
+                            activeElements[activeElements.Count - 1].rect.Y = tempElement.rect.Y;
+                            activeElements[activeElements.Count - 1].position.X = tempElement.position.X;
+                            activeElements[activeElements.Count - 1].position.Y = tempElement.position.Y;
 
-                            DeleteActiveElement(0);
-                            DeleteActiveElement(0);
+                            DeleteActiveElement(activeElements.IndexOf(tempElement));
+                            DeleteActiveElement(activeElements.IndexOf(secondElement));
 
                             flag = true;
                             break;
