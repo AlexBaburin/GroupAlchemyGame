@@ -19,6 +19,7 @@ namespace Alchemy
         List<Element> elements = new List<Element>();
         List<Element> activeElements = new List<Element>();
         Element SelectedElement;
+        Element CreatedElement;
         int indexValue;
         int yPos = 5;
         int scrollDistance = 0;
@@ -42,7 +43,7 @@ namespace Alchemy
             InitializeComponent();
             SetUpApp();
             vScrollBar1.Minimum = 0;
-            vScrollBar1.Maximum = 100;
+            vScrollBar1.Maximum = totalElements+8;
         }
 
         private void SetUpApp()
@@ -50,11 +51,11 @@ namespace Alchemy
             imageLocation = Directory.GetFiles("elements", "*_*.png").ToList();
             totalElements = imageLocation.Count;
 
-            for (int i = 0; i < 2; i++) 
+            for (int i = 0; i < 4; i++) 
             {
                 MakeElements(true);
             }
-            for (int i = 2; i < totalElements; i++)
+            for (int i = 4; i < totalElements; i++)
             {
                 MakeElements(false);
             }
@@ -159,6 +160,7 @@ namespace Alchemy
                             elements[indexValue].discovered = true;
 
                             MakeActiveElement(indexValue);
+                            CreatedElement = elements[indexValue];
                             activeElements[activeElements.Count - 1].rect.X = tempElement.rect.X;
                             activeElements[activeElements.Count - 1].rect.Y = tempElement.rect.Y;
                             activeElements[activeElements.Count - 1].position.X = tempElement.position.X;
@@ -189,6 +191,10 @@ namespace Alchemy
                 if (element.active)
                 {
                     outline = new Pen(Color.Blue, lineAnimation);
+                }
+                else if (element == CreatedElement)
+                {
+                    outline = new Pen(Color.Green, lineAnimation);
                 }
                 else
                 {
