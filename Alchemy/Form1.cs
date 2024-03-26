@@ -225,10 +225,17 @@ namespace Alchemy
             lineAnimation = 0;
             foreach (Element element in elements)
             {
-                if (!element.discovered)
-                    return;
+                /*if (!element.discovered)
+                    return;*/
             }
             isEverythingUnlocked = true;
+            if (isEverythingUnlocked)
+            {
+                waveOut.Stop();
+                this.Hide();
+                Victory Victory = new Victory();
+                Victory.Show();
+            }
         }
 
         private void FormPaintEvent(object sender, PaintEventArgs e)
