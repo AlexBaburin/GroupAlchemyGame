@@ -24,6 +24,7 @@ namespace Alchemy
         Element SelectedElement;
         Element CreatedElement, CreatedElement_2, wrongElement, wrongElement_2;
         int indexValue;
+        bool isSoundPlaying = false;
         int yPos = 25;
         int scrollDistance = 0;
         List<string> imageLocation = new List<string>();
@@ -32,7 +33,6 @@ namespace Alchemy
         int lineAnimation = 0;
         int activeNumber = 0;
         int lineAnimation_2 = 0;
-        WaveStream waveStream;
         WaveOut waveOut = new WaveOut();
         SoundPlayer rightSound = new SoundPlayer(@"sounds\right.wav");
         SoundPlayer newSound = new SoundPlayer(@"sounds\new.wav");
@@ -59,9 +59,9 @@ namespace Alchemy
 
             if (waveOut.PlaybackState is PlaybackState.Playing)
                 waveOut.Stop();
-            waveStream = new AudioFileReader(@"sounds\bg_music.wav");
-            waveOut.Init(waveStream);
-            waveStream.CurrentTime = new TimeSpan(0L);
+            WaveFileReader reader = new WaveFileReader(@"sounds\bg_music.wav");
+            LoopStream loop = new LoopStream(reader);
+            waveOut.Init(loop);
             waveOut.Play();
         }
 
@@ -207,7 +207,11 @@ namespace Alchemy
                             {
                                 wrongElement = secondElement;
                                 wrongElement_2 = tempElement;
-                                wrongSound.Play(); 
+                                if (!isSoundPlaying)
+                                {
+                                    isSoundPlaying = true;
+                                    wrongSound.Play();
+                                }
                             }
                     }
                     if (flag)
@@ -216,6 +220,7 @@ namespace Alchemy
                 tempElement.active = false;
             }
             SelectedElement = null;
+            isSoundPlaying = false;
             lineAnimation = 0;
         }
 
