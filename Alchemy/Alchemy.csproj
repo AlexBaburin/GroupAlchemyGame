@@ -149,4 +149,7 @@
     <None Include="Resources\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del</PreBuildEvent>
+  </PropertyGroup>
 </Project>

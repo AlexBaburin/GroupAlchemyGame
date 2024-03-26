@@ -76,3 +76,5 @@ C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.exe
 C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.pdb
 C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.MainMenu.resources
 C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.AboutAftors.resources
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.AboutAftors.resources
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.MainMenu.resources

@@ -67,7 +67,11 @@ namespace Alchemy
 
         private void SetUpApp()
         {
-            imageLocation = Directory.GetFiles("elements", "*_*.png").ToList();
+            //imageLocation = Directory.GetFiles("elements", "*_*.png").ToList();
+            for (int i = 0; i < 92; i++)
+            {
+                imageLocation.Add(Directory.GetFiles("elements", i + "_*.png").ToList()[0]);
+            }
             totalElements = imageLocation.Count;
 
             for (int i = 0; i < 4; i++) 
