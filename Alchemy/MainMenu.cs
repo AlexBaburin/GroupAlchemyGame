@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,9 +16,12 @@ namespace Alchemy
         bool drag = false;
         Point start_point = new Point(0, 0);
 
+        SoundPlayer MusicMenuTheme = new SoundPlayer(@"sounds\MainMenuTheme.wav");
+
         public MainMenu()
         {
             InitializeComponent();
+            MusicMenuTheme.Play();
         }
         private void button3_MouseEnter(object sender, EventArgs e)
         {
@@ -71,6 +75,7 @@ namespace Alchemy
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MusicMenuTheme.Stop();
             this.Hide();
             Form1 fm1 = new Form1();
             fm1.Show();
