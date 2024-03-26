@@ -315,6 +315,36 @@ namespace Alchemy
             }
         }
 
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.Red;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button4_MouseEnter(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.RoyalBlue;
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             int count = activeElements.Count;
@@ -329,5 +359,7 @@ namespace Alchemy
                 elements[i].elementPic = Image.FromFile(Directory.GetFiles("elements", "Unavailable.png").ToList()[0]);
             }
         }
+
+        
     }
 }
