@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using System.Media;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using NAudio;
+using NAudio.Wave;
 
 namespace Alchemy
 {
@@ -20,9 +22,9 @@ namespace Alchemy
         List<Element> elements = new List<Element>();
         List<Element> activeElements = new List<Element>();
         Element SelectedElement;
-        Element CreatedElement, CreatedElement_2;
+        Element CreatedElement, CreatedElement_2, wrongElement, wrongElement_2;
         int indexValue;
-        int yPos = 5;
+        int yPos = 25;
         int scrollDistance = 0;
         List<string> imageLocation = new List<string>();
         int elementNumber = -1;
@@ -30,7 +32,10 @@ namespace Alchemy
         int lineAnimation = 0;
         int activeNumber = 0;
         int lineAnimation_2 = 0;
+        WaveStream waveStream;
+        WaveOut waveOut = new WaveOut();
         SoundPlayer rightSound = new SoundPlayer(@"sounds\right.wav");
+        SoundPlayer newSound = new SoundPlayer(@"sounds\new.wav");
         SoundPlayer wrongSound = new SoundPlayer(@"sounds\wrong.wav");
 
         bool drag = false;
@@ -51,6 +56,13 @@ namespace Alchemy
             SetUpApp();
             vScrollBar1.Minimum = 0;
             vScrollBar1.Maximum = totalElements+8;
+
+            if (waveOut.PlaybackState is PlaybackState.Playing)
+                waveOut.Stop();
+            waveStream = new AudioFileReader(@"sounds\bg_music.wav");
+            waveOut.Init(waveStream);
+            waveStream.CurrentTime = new TimeSpan(0L);
+            waveOut.Play();
         }
 
         private void SetUpApp()
@@ -88,7 +100,7 @@ namespace Alchemy
         {
             Element newElement = new Element(imageLocation[index], true, index);
             newElement.position.X = 500;
-            newElement.position.Y = 5 + (index - scrollDistance) * 75;
+            newElement.position.Y = 25 + (index - scrollDistance) * 75;
             newElement.rect.X = newElement.position.X;
             newElement.rect.Y = newElement.position.Y;
             activeElements.Add(newElement);
@@ -144,6 +156,7 @@ namespace Alchemy
         private void FormMouseUp(object sender, MouseEventArgs e)
         {
             bool flag = false;
+            Point mousePosition = new Point(e.X, e.Y);
             foreach (Element tempElement in activeElements)
             {
                 if (tempElement.active && tempElement.position.X < 1000 && tempElement.position.X > 400)
@@ -163,7 +176,12 @@ namespace Alchemy
 
                                 indexValue = elementChart[secondElement.index, tempElement.index];
                                 if (elements[indexValue].discovered == false)
+                                {
                                     elements[indexValue].elementPic = Image.FromFile(imageLocation[indexValue]);
+                                    newSound.Play();
+                                }
+                                else
+                                    rightSound.Play();
                                 elements[indexValue].discovered = true;
 
                                 MakeActiveElement(indexValue);
@@ -176,13 +194,15 @@ namespace Alchemy
 
                                 DeleteActiveElement(activeElements.IndexOf(tempElement));
                                 DeleteActiveElement(activeElements.IndexOf(secondElement));
-                                rightSound.Play();
 
                                 flag = true;
                                 break;
                             }
-                            else 
+                            else if (tempElement.rect.Contains(mousePosition) || 
+                                secondElement.rect.Contains(mousePosition))
                             {
+                                wrongElement = secondElement;
+                                wrongElement_2 = tempElement;
                                 wrongSound.Play(); 
                             }
                     }
@@ -236,6 +256,10 @@ namespace Alchemy
                     else 
                         outline = new Pen(Color.Green, 10 - lineAnimation_2);
                 }
+                else if (element == wrongElement || element == wrongElement_2)
+                {
+                    outline = new Pen(Color.Red, lineAnimation);
+                }
                 else
                 {
                     outline = new Pen(Color.Transparent, 1);
@@ -267,6 +291,19 @@ namespace Alchemy
                     lineAnimation++;
                 }
             }
+            if (wrongElement != null)
+            {
+                if (lineAnimation < 5)
+                {
+                    lineAnimation++;
+                }
+                else
+                {
+                    lineAnimation = 0;
+                    wrongElement = null;
+                    wrongElement_2 = null;
+                }
+            }
             if (CreatedElement != null)
             {
                 if (lineAnimation_2 < 10)
@@ -276,8 +313,8 @@ namespace Alchemy
                 else
                 {
                     lineAnimation_2 = 0;
-                CreatedElement = null;
-                CreatedElement_2 = null;
+                    CreatedElement = null;
+                    CreatedElement_2 = null;
                 }
             }
             this.Invalidate();
@@ -311,7 +348,7 @@ namespace Alchemy
                     if (scrollDistance < 0)
                     { scrollDistance = 0; }
                     tempElement.position.X = 500;
-                    tempElement.position.Y = 5 + (elements.IndexOf(tempElement) - scrollDistance) * 75;
+                    tempElement.position.Y = 25 + (elements.IndexOf(tempElement) - scrollDistance) * 75;
                     tempElement.rect.X = tempElement.position.X;
                     tempElement.rect.Y = tempElement.position.Y;
                 }
