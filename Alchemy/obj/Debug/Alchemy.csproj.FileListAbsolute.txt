@@ -103,3 +103,4 @@ D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.AboutAftors
 D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.MainMenu.resources
 C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.Victory.resources
 C:\Users\as1nts\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.Victory.resources
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.Victory.resources
