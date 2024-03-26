@@ -35,6 +35,7 @@ namespace Alchemy
 
         public Form1()
         {
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             string[] lines = File.ReadAllLines("Elements.txt");
             this.elementChart = new int[lines.Length, lines[0].Split(' ').Length];
             for (int i = 0; i < lines.Length; i++)

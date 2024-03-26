@@ -20,3 +20,15 @@ C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.Co
 C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.exe
 C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.pdb
 D:\Домашка\Практика\Alchemy\Alchemy\bin\Debug\Elements.txt
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\bin\Debug\Elements.txt
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\bin\Debug\Alchemy.exe.config
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\bin\Debug\Alchemy.exe
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\bin\Debug\Alchemy.pdb
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.AssemblyReference.cache
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.SuggestedBindingRedirects.cache
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.Form1.resources
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.Properties.Resources.resources
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.GenerateResource.cache
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.CoreCompileInputs.cache
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.exe
+C:\Users\as1nts\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.pdb

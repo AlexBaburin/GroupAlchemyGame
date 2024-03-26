@@ -41,10 +41,10 @@ namespace Alchemy
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(562, 635);
+            this.button1.Location = new System.Drawing.Point(500, 508);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 55);
+            this.button1.Size = new System.Drawing.Size(111, 44);
             this.button1.TabIndex = 1;
             this.button1.Text = "Очистить";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,10 +52,10 @@ namespace Alchemy
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(418, 635);
+            this.button2.Location = new System.Drawing.Point(372, 508);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 55);
+            this.button2.Size = new System.Drawing.Size(123, 44);
             this.button2.TabIndex = 2;
             this.button2.Text = "Начать заново";
             this.button2.UseVisualStyleBackColor = true;
@@ -69,19 +69,19 @@ namespace Alchemy
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(943, 12);
+            this.vScrollBar1.Location = new System.Drawing.Point(838, 10);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(26, 678);
+            this.vScrollBar1.Size = new System.Drawing.Size(26, 542);
             this.vScrollBar1.TabIndex = 3;
             this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(978, 694);
+            this.ClientSize = new System.Drawing.Size(869, 555);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
