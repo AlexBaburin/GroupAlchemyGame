@@ -229,6 +229,13 @@ namespace Alchemy
                     return;
             }
             isEverythingUnlocked = true;
+            if (isEverythingUnlocked)
+            {
+                waveOut.Stop();
+                this.Hide();
+                Victory Victory = new Victory();
+                Victory.Show();
+            }
         }
 
         private void FormPaintEvent(object sender, PaintEventArgs e)

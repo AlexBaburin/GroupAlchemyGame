@@ -101,3 +101,4 @@ C:\Users\lagut\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.MainMenu.
 C:\Users\lagut\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.Up2Date
 D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.AboutAftors.resources
 D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.MainMenu.resources
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.Victory.resources
