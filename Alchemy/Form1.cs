@@ -225,8 +225,8 @@ namespace Alchemy
             lineAnimation = 0;
             foreach (Element element in elements)
             {
-                /*if (!element.discovered)
-                    return;*/
+                if (!element.discovered)
+                    return;
             }
             isEverythingUnlocked = true;
             if (isEverythingUnlocked)
