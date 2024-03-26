@@ -142,6 +142,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\button3 %281%292.png" />
+    <None Include="Resources\button3 %281%291.png" />
+    <None Include="Resources\button3 %281%29.png" />
     <None Include="Resources\6158993.jpg" />
     <None Include="Resources\interstellar-cosmic-texture-background_922357-18807.jpg" />
     <None Include="Resources\alchemy-cover.jpg" />
