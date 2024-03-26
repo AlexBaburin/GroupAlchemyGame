@@ -63,9 +63,29 @@ namespace Alchemy.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alchemy_cover {
+            get {
+                object obj = ResourceManager.GetObject("alchemy-cover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap interstellar_cosmic_texture_background_922357_18807 {
+            get {
+                object obj = ResourceManager.GetObject("interstellar-cosmic-texture-background_922357-18807", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
