@@ -99,3 +99,5 @@ C:\Users\lagut\Source\Repos\GroupAlchemyGame\Alchemy\bin\Debug\System.Security.P
 C:\Users\lagut\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.AboutAftors.resources
 C:\Users\lagut\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.MainMenu.resources
 C:\Users\lagut\Source\Repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.csproj.Up2Date
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.AboutAftors.resources
+D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.MainMenu.resources
