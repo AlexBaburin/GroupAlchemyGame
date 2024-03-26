@@ -25,6 +25,7 @@ namespace Alchemy
         Element CreatedElement, CreatedElement_2, wrongElement, wrongElement_2;
         int indexValue;
         bool isSoundPlaying = false;
+        bool isEverythingUnlocked = false;
         int yPos = 25;
         int scrollDistance = 0;
         List<string> imageLocation = new List<string>();
@@ -222,6 +223,12 @@ namespace Alchemy
             SelectedElement = null;
             isSoundPlaying = false;
             lineAnimation = 0;
+            foreach (Element element in elements)
+            {
+                if (!element.discovered)
+                    return;
+            }
+            isEverythingUnlocked = true;
         }
 
         private void FormPaintEvent(object sender, PaintEventArgs e)
