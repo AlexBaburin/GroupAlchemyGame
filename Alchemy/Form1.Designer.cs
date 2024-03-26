@@ -37,16 +37,14 @@ namespace Alchemy
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(500, 508);
+            this.button1.Location = new System.Drawing.Point(562, 635);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 44);
+            this.button1.Size = new System.Drawing.Size(125, 55);
             this.button1.TabIndex = 1;
             this.button1.Text = "Очистить";
             this.button1.UseVisualStyleBackColor = true;
@@ -54,10 +52,10 @@ namespace Alchemy
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(372, 508);
+            this.button2.Location = new System.Drawing.Point(418, 635);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 44);
+            this.button2.Size = new System.Drawing.Size(138, 55);
             this.button2.TabIndex = 2;
             this.button2.Text = "Начать заново";
             this.button2.UseVisualStyleBackColor = true;
@@ -71,29 +69,19 @@ namespace Alchemy
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(838, 10);
+            this.vScrollBar1.Location = new System.Drawing.Point(943, 12);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(26, 542);
+            this.vScrollBar1.Size = new System.Drawing.Size(26, 678);
             this.vScrollBar1.TabIndex = 3;
             this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Alchemy.Properties.Resources.line;
-            this.pictureBox1.Location = new System.Drawing.Point(649, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1, 572);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 555);
-            this.Controls.Add(this.pictureBox1);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(978, 694);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -106,7 +94,6 @@ namespace Alchemy
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FormMouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FormMouseUp);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -116,7 +103,6 @@ namespace Alchemy
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.PictureBox pictureBox1;
 
         //Таблица элементов
         private int[,] elementChart;

@@ -196,7 +196,8 @@ namespace Alchemy
             foreach (Element element in elements)
             {
                 e.Graphics.DrawImage(element.elementPic, element.position.X, element.position.Y, element.width, element.height);
-                Pen outline;
+                Pen outline, blackOutline;
+                blackOutline = new Pen(Color.Black, 1);
                 if (element.active)
                 {
                     outline = new Pen(Color.Blue, lineAnimation);
@@ -212,12 +213,14 @@ namespace Alchemy
                 {
                     outline = new Pen(Color.Transparent, 1);
                 }
+                e.Graphics.DrawRectangle(blackOutline, element.rect);
                 e.Graphics.DrawRectangle(outline, element.rect);
             }
             foreach (Element element in activeElements)
             {
                 e.Graphics.DrawImage(element.elementPic, element.position.X, element.position.Y, element.width, element.height);
-                Pen outline;
+                Pen outline, blackOutline;
+                blackOutline = new Pen(Color.Black, 1);
                 if (element.active)
                 {
                     outline = new Pen(Color.Blue, lineAnimation);
@@ -233,6 +236,7 @@ namespace Alchemy
                 {
                     outline = new Pen(Color.Transparent, 1);
                 }
+                e.Graphics.DrawRectangle(blackOutline, element.rect);
                 e.Graphics.DrawRectangle(outline, element.rect);
             }
             if (SelectedElement != null)
@@ -318,7 +322,7 @@ namespace Alchemy
                 DeleteActiveElement(0);
                 activeNumber--;
             }
-            for (int i = 2; i < elements.Count; i++)
+            for (int i = 4; i < elements.Count; i++)
             {
                 elements[i].discovered = false;
                 elements[i].elementPic = Image.FromFile(Directory.GetFiles("elements", "Unavailable.png").ToList()[0]);
