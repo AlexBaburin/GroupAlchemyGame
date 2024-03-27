@@ -104,3 +104,7 @@ D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.MainMenu.re
 C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.Victory.resources
 C:\Users\as1nts\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.Victory.resources
 D:\Домашка\Практика\Alchemy\Alchemy\obj\Debug\Alchemy.Victory.resources
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\bin\Debug\Alchemy.exe.manifest
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\bin\Debug\Alchemy.application
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.exe.manifest
+C:\Users\lagut\source\repos\GroupAlchemyGame\Alchemy\obj\Debug\Alchemy.application

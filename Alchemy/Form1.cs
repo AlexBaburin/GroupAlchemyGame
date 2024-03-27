@@ -46,12 +46,16 @@ namespace Alchemy
         {
             FormBorderStyle = FormBorderStyle.FixedSingle;
             string[] lines = File.ReadAllLines("Elements.txt");
-            this.elementChart = new int[lines.Length, lines[0].Split(' ').Length];
-            for (int i = 0; i < lines.Length; i++)
+            this.elementChart = new int[lines.Length+1, lines[0].Split(' ').Length];
+            for (int i = lines.Length - 1; i >= 0; i--)
             {
                 string[] temp = lines[i].Split(' ');
                 for (int j = 0; j < temp.Length; j++)
                     elementChart[i, j] = Convert.ToInt32(temp[j]);
+            }
+            for(int i=0; i<93; i++)
+            {
+                this.elementChart[92, i] = -1;
             }
             InitializeComponent();
             SetUpApp();
